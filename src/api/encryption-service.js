@@ -1,6 +1,7 @@
 const aesjs = require('aes-js');
 const jssha256 = require('js-sha256');
 
+const ASCII_CHARACTERS = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 export const encryptSymmetricCbc = (payloadUtf8, key, ivHex, useSha256) => {
   if (useSha256) {
     key = jssha256.sha256.arrayBuffer(key);
@@ -28,11 +29,10 @@ export const decryptSymmetricCbc = (encryptedPayloadHex, key, ivVectorHex, useSh
 
 export const generateRandomIvVectorHex = () => {
   let result = '';
-  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-  const charactersLength = characters.length;
+  const charactersLength = ASCII_CHARACTERS.length;
   // eslint-disable-next-line
   for (let i = 0; i < 16; i++) {
-    result += characters.charAt(Math.floor(Math.random() * charactersLength));
+    result += ASCII_CHARACTERS.charAt(Math.floor(Math.random() * charactersLength));
   }
   return aesjs.utils.hex.fromBytes(Buffer.from(result));
 };

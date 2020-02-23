@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <saved-file-dialog :file-saved="fileSavedShowPopup" :error="true" :text-content="errorMessage">
+    </saved-file-dialog>
   <q-uploader
     flat
     @added="getFile"
@@ -7,11 +10,21 @@
     :filter="checkFileType"
     :hide-upload-btn="true"
   />
+  </div>
 </template>
 
 <script>
+import SavedFileDialog from './SavedFileDialog';
+
 export default {
   name: 'FileReader',
+  components: { SavedFileDialog },
+  data() {
+    return {
+      fileSavedShowPopup: false,
+      errorMessage: 'Only files with .txt extension are accepted!',
+    };
+  },
   methods: {
     getFile(files) {
       const reader = new FileReader();
@@ -25,7 +38,11 @@ export default {
       };
     },
     checkFileType(files) {
-      return files.filter((file) => file.type === 'text/plain');
+      const res = files.filter((file) => file.type === 'text/plain');
+      if (!res || res.length === 0) {
+        this.fileSavedShowPopup = !this.fileSavedShowPopup;
+      }
+      return res;
     },
   },
 };
