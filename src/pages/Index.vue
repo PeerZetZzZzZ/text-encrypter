@@ -34,7 +34,7 @@
               <q-card-section>
                   <span class="text-bold text-red text-subtitle2 custom-font">
                   This tool works only in your browser so you can use it offline. <br>
-                  To be sure your data are safe turn off internet connection
+                  To be sure your data is safe turn off internet connection
                   when encrypting/decrypting the data.
                 </span>
               </q-card-section>
