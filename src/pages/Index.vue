@@ -3,7 +3,7 @@
     <q-page>
         <div class="row">
           <div class="col-lg-4 col-xs-grow text-center">
-            <img src="statics/text-encrypter.png" class="q-pa-x" style="max-width: 100%"/>
+            <img src="statics/text-encrypter.png" class="q-pa-md" style="max-width: 100%"/>
             <q-card class="q-ma-md">
               <q-card-section>
                 <div class="text-h4 custom-font">About</div>

@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div class="row">
+      <div class="row q-pb-md">
         <div class="col-lg-12 col-xs-grow">
           <q-btn-toggle
             v-model="option"
