@@ -1,7 +1,7 @@
 # Text Encrypter (text-encrypter)
 
 Universal text data encryption/decryption tool using AES-256 (CBC) algorithm.
-Live version: https://textencryter.com
+Live version: https://textencrypter.com
 
 ![TextEncrypter](preview.png)
 
@@ -16,6 +16,11 @@ Encryption specification:
 - 16 bytes IV vector random generated from ASCII characters
 - PKCS7 encryption payload padding
 
+Dependencies:
+- aes-js
+- js-sha256
+- Quasar framework
+- file-saver
 
 Tool works offline.
 
