@@ -7,7 +7,7 @@
           Text Encrypter
         </q-toolbar-title>
 
-        <div>v1.0.0 |
+        <div>v1.0.1 |
           <a href="https://pthomann.pl" target="_blank" style="color: white"> </a>
           | made by Przemysław Thomann <a href="https://pthomann.pl" target="_blank" style="color: white">pthomann.pl</a></div>
       </q-toolbar>

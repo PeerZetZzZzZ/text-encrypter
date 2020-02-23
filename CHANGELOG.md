@@ -1,4 +1,8 @@
 # Changelog:
+## [1.0.1] (23.02.2020)
+##### Added:
+- reading text data from input for encryption/decryption
+- Montserrat font added
 ## [1.0.0] (23.02.2020)
 ##### Added:
 - aes-256 cbc encryption/decryption

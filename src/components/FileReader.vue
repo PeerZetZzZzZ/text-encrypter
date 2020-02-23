@@ -1,6 +1,6 @@
 <template>
   <div>
-    <saved-file-dialog :file-saved="fileSavedShowPopup" :error="true" :text-content="errorMessage">
+    <saved-file-dialog :show="showPopup" :error="true" :text-content="errorMessage">
     </saved-file-dialog>
   <q-uploader
     flat
@@ -21,7 +21,7 @@ export default {
   components: { SavedFileDialog },
   data() {
     return {
-      fileSavedShowPopup: false,
+      showPopup: false,
       errorMessage: 'Only files with .txt extension are accepted!',
     };
   },
@@ -40,7 +40,7 @@ export default {
     checkFileType(files) {
       const res = files.filter((file) => file.type === 'text/plain');
       if (!res || res.length === 0) {
-        this.fileSavedShowPopup = !this.fileSavedShowPopup;
+        this.showPopup = !this.showPopup;
       }
       return res;
     },

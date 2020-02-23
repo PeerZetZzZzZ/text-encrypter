@@ -11,10 +11,38 @@
       </div>
       <div class="row">
         <div class="col-lg-12 col-xs-grow">
+          <q-btn-toggle
+            v-model="option"
+            spread
+            no-caps
+            color="white"
+            text-color="black"
+            :options="[
+              {label: 'Read from file', value: 0, icon:'attach_file'},
+              {label: 'Paste data', value: 1, icon:'create'}
+            ]"/>
+        </div>
+      </div>
+      <div class="row" v-if="option === 0">
+        <div class="col-lg-12 col-xs-grow">
           <span class="text-subtitle2 text-primary text-bold">
-           1. Data file .txt to encrypt (text/plain only).
+           1. Data file .txt to encrypt (text/plain only)
           </span>
           <file-reader @onFileUploaded="fileUploaded"></file-reader>
+        </div>
+      </div>
+      <div class="row" v-if="option === 1">
+        <div class="col-lg-12 col-xs-grow">
+            <span class="text-subtitle2 text-primary text-bold">
+           1. Text data to encrypt
+          </span>
+          <q-input
+            style="max-height:300px;"
+            v-model="dataToEncrypt"
+            filled
+            rows="30"
+            type="textarea"
+          />
         </div>
       </div>
       <div class="row items-center q-pt-md">
@@ -107,7 +135,7 @@
               :disable="encryptionKey === null ||
                     encryptionKey2 === null ||
                     encryptionKey !== encryptionKey2 ||
-                    fileContent === null ||
+                    dataToEncrypt === null ||
                     (!useSha256 && encryptionKey.length !== 32)"
            />
         </div>
@@ -132,7 +160,7 @@ export default {
       maxlength: 32,
       encryptionKey: null,
       encryptionKey2: null,
-      fileContent: null,
+      dataToEncrypt: null,
       encryptedFileContent: null,
       passwordHint: 'encryption key must be 32 characters long',
       isPwd: true,
@@ -141,7 +169,7 @@ export default {
   },
   methods: {
     fileUploaded(fileContent) {
-      this.fileContent = fileContent;
+      this.dataToEncrypt = fileContent;
     },
     sha256Changed(value) {
       if (value) {
@@ -154,17 +182,17 @@ export default {
     },
     encrypt() {
       const ivHex = generateRandomIvVectorHex();
-      this.encryptedFileContent = encryptSymmetricCbc(this.fileContent,
-        this.encryptionKey, ivHex, this.useSha256);
+      this.encryptedFileContent = encryptSymmetricCbc(
+        this.dataToEncrypt,
+        this.encryptionKey,
+        ivHex,
+        this.useSha256,
+      );
       this.$emit('onEncryptionResult', generateEncryptionResult(
         this.encryptedFileContent,
         ivHex,
         this.useSha256,
       ));
-    },
-    isASCII(str) {
-      // eslint-disable-next-line
-      return /^[\x00-\x7F]*$/.test(str);
     },
   },
 };

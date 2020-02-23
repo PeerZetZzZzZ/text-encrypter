@@ -43,7 +43,7 @@ export default {
       type: Boolean,
       default: false,
     },
-    fileSaved: {
+    show: {
       type: Boolean,
       required: true,
     },
@@ -54,7 +54,7 @@ export default {
     };
   },
   watch: {
-    fileSaved() {
+    show() {
       this.showPopup = true;
     },
   },
