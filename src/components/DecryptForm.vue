@@ -1,9 +1,16 @@
 <template>
-  <q-card class="q-ma-lg">
+  <q-card :class="$q.platform.is.mobile ? '': 'q-ma-md'">
     <q-card-section>
       <div class="row">
         <div class="col-12">
-          <h3>Decryption form</h3>
+          <div class="row justify-center">
+            <div class="col-auto">
+              <div class="text-h3 q-pb-md text-primary" >
+                <q-icon name="lock_open" style="font-size: 4.5rem;"></q-icon>
+                Decrypt
+              </div>
+            </div>
+          </div>
           <span class="text-subtitle2 text-primary text-bold">
             1. Data file .txt to decrypt (text/plain only, encrypted using Text Encrypter).</span>
           <file-reader @onFileUploaded="fileUploaded"></file-reader>
@@ -42,24 +49,27 @@
           <span class="text-subtitle2 text-primary text-bold">
             4. Encryption date
           </span><br>
-          <q-input v-model="decryptionFileJson.encryptionDate" readonly/>
+          <q-input :value="decryptionFileJson.encryptionDate" readonly/>
         </div>
       </div>
       <div class="row q-pt-md" v-if="decryptionFileJson.encryptedDataHex">
         <div class="col-12">
           <span class="text-subtitle2 text-primary text-bold">
-           4. Encryption key.
+           4. Encryption key
           </span>
-          <q-input :type="isPwd ? 'password' : 'text'" bottom-slots v-model="encryptionKey"
+          <q-input bottom-slots v-model="encryptionKey"
+                   :type="isPwd ? 'password' : 'text'"
                    label="Encryption key" counter>
             <template v-slot:prepend>
               <q-icon name="vpn_key"/>
             </template>
-            <q-icon
-              :name="isPwd ? 'visibility_off' : 'visibility'"
-              class="cursor-pointer"
-              @click="isPwd = !isPwd"
-            />
+            <template v-slot:append>
+              <q-icon
+                :name="isPwd ? 'visibility_off' : 'visibility'"
+                class="cursor-pointer"
+                @click="isPwd = !isPwd"
+              />
+            </template>
           </q-input>
         </div>
       </div>
@@ -67,7 +77,7 @@
         <div class="col-grow">
           <q-btn color="primary" icon="lock" label="Decrypt" @click="decrypt"
                  :disable="encryptionKey === null ||
-                    decryptionFileJson.encryptedDataHex === null"
+                           decryptionFileJson.encryptedDataHex === null"
           />
         </div>
       </div>
@@ -76,7 +86,7 @@
 </template>
 
 <script>
-import { decryptSymmetricCbc } from '../api';
+import { decryptSymmetricCbc } from '../api/encryption-service';
 import FileReader from './FileReader';
 
 export default {
@@ -86,6 +96,7 @@ export default {
     return {
       option: 0,
       cbc: true,
+      isPwd: true,
       useSha256: false,
       encryptionKey: null,
       encryptionKey2: null,
@@ -95,7 +106,6 @@ export default {
   },
   methods: {
     fileUploaded(fileContent) {
-      console.log(fileContent);
       this.decryptionFileJson = JSON.parse(fileContent);
     },
     decrypt() {

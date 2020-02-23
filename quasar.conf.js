@@ -55,6 +55,7 @@ module.exports = function (ctx) {
         'QField',
         'QSeparator',
         'QToggle',
+        'QImg'
 
       ],
       directives: [],

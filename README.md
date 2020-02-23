@@ -1,6 +1,6 @@
 # Text Encrypter (text-encrypter)
 
-Universal text data tool using AES-256 (CBC) algorithm.
+Universal text data encryption tool using AES-256 (CBC) algorithm.
 
 ## Install the dependencies
 ```bash

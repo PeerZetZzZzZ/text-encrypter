@@ -1,9 +1,16 @@
-<template>
-  <q-card class="q-ma-md">
+  <template>
+  <q-card :class="$q.platform.is.mobile ? '': 'q-ma-md'">
     <q-card-section>
+      <div class="row justify-center">
+        <div class="col-auto">
+          <div class="text-h3 q-pb-md text-primary" >
+            <q-icon name="lock" style="font-size: 4.5rem;"></q-icon>
+            Encrypt
+          </div>
+        </div>
+      </div>
       <div class="row">
-        <div class="col-12">
-          <h3>Encryption form</h3>
+        <div class="col-lg-12 col-xs-grow">
           <span class="text-subtitle2 text-primary text-bold">
            1. Data file .txt to encrypt (text/plain only).
           </span>
@@ -23,14 +30,16 @@
           </q-checkbox><br>
           <q-checkbox :value="true" label="Random IV vector generation" :disable="true">
             <q-tooltip content-style="font-size: 14px">
-              16 bytes long IV vector is part of AES CBC encryption.
+              16 bytes long IV vector is required part of AES CBC encryption.
               The value will be randomly generated.
             </q-tooltip>
           </q-checkbox><br>
           <q-checkbox :value="true" label="PKCS7 payload padding" :disable="true">
             <q-tooltip content-style="font-size: 14px">
-              16 bytes long IV vector is part of AES CBC encryption.
-              The value will be randomly generated.
+              Padding is adding missing bytes to the encryption payload
+              in order to match the required data size (in AES-256 CBC
+              data is divided on 16 bytes blocks). <br>
+              PKCS7 padding is commonly used.
             </q-tooltip>
           </q-checkbox>
         </div>
@@ -108,7 +117,7 @@
 </template>
 
 <script>
-import { encryptSymmetricCbc, generateRandomIvVectorHex } from '../api';
+import { encryptSymmetricCbc, generateRandomIvVectorHex } from '../api/encryption-service';
 import FileReader from './FileReader';
 import { generateEncryptionResult } from '../api/result-generator-service';
 
@@ -142,7 +151,6 @@ export default {
         this.passwordHint = 'encryption key must be 32 characters long';
         this.maxlength = 32;
       }
-      console.log(value);
     },
     encrypt() {
       const ivHex = generateRandomIvVectorHex();

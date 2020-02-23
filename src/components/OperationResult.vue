@@ -1,10 +1,16 @@
 <template>
-  <q-card class="q-ma-md">
+  <q-card :class="$q.platform.is.mobile ? '': 'q-ma-md'">
     <q-card-section>
-      <h3>Result</h3>
-      <div class="q-ma-md" style="max-width: 100%;;">
+      <div class="row justify-center">
+        <div class="col-auto">
+          <div class="text-h3 q-pb-md text-primary" >
+            Result
+          </div>
+        </div>
+      </div>
+      <div :class="$q.platform.is.mobile ? '': 'q-ma-md'" style="max-width: 100%;;">
         <q-input
-          style="max-height:520px;"
+          style="max-height:565px;"
           v-model="resultContent"
           filled
           rows="50"
@@ -16,7 +22,8 @@
         <div class="col-grow">
           <file-saver :file-content="resultContent"
                       :file-name="resultFileName"
-                      v-if="resultContent !== null">
+                      :disabled="resultContent === null ||
+                                 resultContent === 'No result yet.'">
           </file-saver>
         </div>
       </div>

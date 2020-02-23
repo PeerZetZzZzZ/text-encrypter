@@ -2,43 +2,54 @@
   <q-layout view="lHh Lpr lFf ">
     <q-page>
         <div class="row">
-          <div class="col-4 text-center">
-            <h1>Text Encrypter</h1>
-            <h5>Universal text encryption tool using AES-256 (CBC) algorithm.</h5>
+          <div class="col-lg-4 col-xs-grow text-center">
+            <img src="statics/text-encrypter.png" class="q-pa-x" style="max-width: 100%"/>
             <q-card class="q-ma-md">
               <q-card-section>
-                <div class="text-h5">About</div>
+                <div class="text-h4">About</div>
               </q-card-section>
-              <q-card-section class="text-left">
-                 This tool allows to encrypt any kind of text data for protected storage.
+              <q-card-section class="text-left text-subtitle1">
+                 This tool allows to encrypt (and decrypt) any kind of text
+                 data for protected storage. <br>
                  It can be used for sensitive data encryption for example passwords or seeds. <br>
                  It uses AES CBC algorithm with 256 bits long key. <br>
-                <b>
+                <span class="text-bold">
                   Data encrypted with that tool can be later decrypted using any
                   AES CBC implementation software/script.
-                </b><br>
-                <b class="text-red">
-                  This tool just works in your browser so you can use it offline.
-                  To maintain 100% privacy turn off internet connection.
-                </b>
+                </span><br>
               </q-card-section>
               <q-card-section>
-                <div class="text-h5">How it works</div>
+                <div class="text-h4">How it works</div>
               </q-card-section>
-              <q-card-section class="text-left">
-                1. Upload the <b>.txt</b> file with the content to encrypt. <br>
+              <q-card-section class="text-left text-subtitle1">
+                1. Upload the <b>.txt</b> file with the data content to encrypt. <br>
                 2. Provide encryption key (WHICH YOU CANNOT FORGET). <br>
                 3. Encrypt the data. <br>
-                4. Download the encrypted data as the .txt file. <br>
-                    Save it or print it. <br>
-                    You can only decrypt the data using the encryption key you provided.
+                4. Download the encrypted data as the .txt file. Save it or print it. <br>
+                <span class="text-bold">
+                  You can only decrypt the data using the encryption key you provided.
+                </span>
+              </q-card-section>
+              <q-separator />
+              <q-card-section>
+                  <span class="text-bold text-red text-subtitle2">
+                  This tool works only in your browser so you can use it offline. <br>
+                  To be sure your data are safe turn off internet connection
+                  when encrypting/decrypting the data.
+                </span>
+              </q-card-section>
+              <q-separator />
+              <q-card-section>
+                <a href="https://github.com/PeerZetZzZzZ/text-encrypter" target="_blank" style="color: black" class="text-bold">
+                  Find on GitHub <i class="fab fa-github"></i>
+                </a>
               </q-card-section>
             </q-card>
           </div>
-          <div class="col-8 q-pa-md">
+          <div class="col-lg-8 col-xs-grow" :class="$q.platform.is.mobile ? '': 'q-pa-md'">
               <q-card>
                 <div class="row justify-center">
-                  <h3>Choose operation</h3>
+                  <h3 class="text-center">Choose operation</h3>
                   <div class="col-12">
                     <q-btn-toggle
                       v-model="option"
@@ -55,13 +66,14 @@
                 </div>
                 <q-card-section>
                   <div class="row justify-center">
-                    <div class="col-6">
+                    <div class="col-lg-6 col-xs-grow"
+                         :class="$q.platform.is.mobile ? 'q-pb-md': ''">
                       <encrypt-form v-if="option === 0" @onEncryptionResult="onEncryptionResult">
                       </encrypt-form>
                       <decrypt-form v-if="option === 1" @onDecryptionResult="onDecryptionResult">
                       </decrypt-form>
                     </div>
-                    <div class="col-6">
+                    <div class="col-lg-6 col-xs-grow">
                       <operation-result :result-content="resultContent"
                                         :result-file-name="getResultFileName()">
                       </operation-result>
@@ -103,11 +115,11 @@ export default {
     getResultFileName() {
       if (this.option === 0) {
         // eslint-disable-next-line
-        return 'text-encrypter-ENCRYPTED.txt';
+        return `text-encrypter-ENCRYPTED-${new Date().getTime()}.txt`;
         // eslint-disable-next-line
       } else  {
         // eslint-disable-next-line
-        return 'text-encrypter-DECRYPTED.txt';
+        return `text-encrypter-DECRYPTED-${new Date().getTime()}.txt`;
       }
     },
   },

@@ -3,7 +3,7 @@
     flat
     @added="getFile"
     bordered
-    style="max-width: 300px"
+    style="max-width: 100%"
     :filter="checkFileType"
     :hide-upload-btn="true"
   />

@@ -3,12 +3,12 @@
     <q-header elevated>
       <q-toolbar>
 
-        <q-toolbar-title>
+        <q-toolbar-title v-if="!$q.platform.is.mobile">
           Text Encrypter
         </q-toolbar-title>
 
         <div>v1.0 |
-          <a href="https://pthomann.pl" target="_blank" style="color: white"> Find on GitHub <i class="fab fa-github"></i></a>
+          <a href="https://pthomann.pl" target="_blank" style="color: white"> </a>
           | made by Przemysław Thomann <a href="https://pthomann.pl" target="_blank" style="color: white">pthomann.pl</a></div>
       </q-toolbar>
     </q-header>
