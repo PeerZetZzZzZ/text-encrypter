@@ -25,7 +25,9 @@
                 1. Paste text or upload the <b>.txt</b> file with the data content to encrypt. <br>
                 2. Provide encryption key (WHICH YOU CANNOT FORGET). <br>
                 3. Encrypt the data. <br>
-                4. Download the encrypted data as the .txt file. Save it or print it. <br>
+                4. Download the encrypted data as the .txt file.
+                Do not modify the content. Save it or print it. <br>
+                5. For decryption upload the encrypted .txt file and provide encryption key. <br>
                 <span class="text-bold">
                   You can only decrypt the data using the encryption key you provided.
                 </span>
