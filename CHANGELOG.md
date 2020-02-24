@@ -1,4 +1,8 @@
 # Changelog:
+## [1.0.2] (24.02.2020)
+##### Added:
+- ASCII encryption key validation
+- changed application colors
 ## [1.0.1] (23.02.2020)
 ##### Added:
 - reading text data from input for encryption/decryption

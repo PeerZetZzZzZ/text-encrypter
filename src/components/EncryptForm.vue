@@ -1,5 +1,7 @@
   <template>
   <q-card :class="$q.platform.is.mobile ? '': 'q-ma-md'">
+    <saved-file-dialog :error="true" :show="showPopup" :text-content="errorPopupMessage">
+    </saved-file-dialog>
     <q-card-section>
       <div class="row justify-center">
         <div class="col-auto">
@@ -148,10 +150,12 @@
 import { encryptSymmetricCbc, generateRandomIvVectorHex } from '../api/encryption-service';
 import FileReader from './FileReader';
 import { generateEncryptionResult } from '../api/result-generator-service';
+import SavedFileDialog from './SavedFileDialog';
+import { isAscii } from '../api/ascii-service';
 
 export default {
   name: 'EncryptForm',
-  components: { FileReader },
+  components: { SavedFileDialog, FileReader },
   data() {
     return {
       option: 0,
@@ -165,6 +169,8 @@ export default {
       passwordHint: 'encryption key must be 32 characters long',
       isPwd: true,
       isPwd2: true,
+      errorPopupMessage: 'Encryption password must contain only ASCII characters, please fix.',
+      showPopup: false,
     };
   },
   methods: {
@@ -181,18 +187,22 @@ export default {
       }
     },
     encrypt() {
-      const ivHex = generateRandomIvVectorHex();
-      this.encryptedFileContent = encryptSymmetricCbc(
-        this.dataToEncrypt,
-        this.encryptionKey,
-        ivHex,
-        this.useSha256,
-      );
-      this.$emit('onEncryptionResult', generateEncryptionResult(
-        this.encryptedFileContent,
-        ivHex,
-        this.useSha256,
-      ));
+      if (!isAscii(this.encryptionKey)) {
+        this.showPopup = !this.showPopup;
+      } else {
+        const ivHex = generateRandomIvVectorHex();
+        this.encryptedFileContent = encryptSymmetricCbc(
+          this.dataToEncrypt,
+          this.encryptionKey,
+          ivHex,
+          this.useSha256,
+        );
+        this.$emit('onEncryptionResult', generateEncryptionResult(
+          this.encryptedFileContent,
+          ivHex,
+          this.useSha256,
+        ));
+      }
     },
   },
 };

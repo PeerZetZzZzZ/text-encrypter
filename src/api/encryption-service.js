@@ -1,7 +1,8 @@
+import { ASCII_CHARACTERS } from 'src/api/ascii-service';
+
 const aesjs = require('aes-js');
 const jssha256 = require('js-sha256');
 
-const ASCII_CHARACTERS = '!"#$%&\'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`abcdefghijklmnopqrstuvwxyz{|}~';
 export const encryptSymmetricCbc = (payloadUtf8, key, ivHex, useSha256) => {
   if (useSha256) {
     key = jssha256.sha256.arrayBuffer(key);

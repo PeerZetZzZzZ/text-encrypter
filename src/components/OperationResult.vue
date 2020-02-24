@@ -8,9 +8,9 @@
           </div>
         </div>
       </div>
-      <div :class="$q.platform.is.mobile ? '': 'q-ma-md'" style="max-width: 100%;;">
+      <div :class="$q.platform.is.mobile ? '': 'q-ma-md'">
         <q-input
-          style="max-height:565px;"
+          style="max-height:600px;"
           v-model="resultContent"
           filled
           rows="50"
