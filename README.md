@@ -6,10 +6,10 @@ Live version: https://textencrypter.com
 ![TextEncrypter](preview.png)
 
 Features:
-- .txt data file encryption
+- .txt data file / input data encryption
 - optional SHA-256 checksum of password
 - save result as JSON (.txt file)
-- .txt data file decryption
+- .txt data file / input data decryption
 
 Encryption specification:
 - AES-256 CBC

@@ -5,8 +5,11 @@
     <q-card-section>
       <div class="row justify-center">
         <div class="col-auto">
-          <div class="text-h3 q-pb-md text-primary" >
-            <q-icon name="lock" style="font-size: 4.5rem;"></q-icon>
+          <div class="q-pb-md text-primary"
+               :class="$q.platform.is.mobile ? 'text-h4': 'text-h3'">
+            <q-icon name="lock" :style="$q.platform.is.mobile ?
+            'font-size: 3rem': 'font-size:4.5rem'">
+            </q-icon>
             Encrypt
           </div>
         </div>
@@ -17,7 +20,6 @@
             v-model="option"
             spread
             no-caps
-            color="white"
             text-color="black"
             :options="[
               {label: 'Read from file', value: 0, icon:'attach_file'},

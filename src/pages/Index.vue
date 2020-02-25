@@ -3,7 +3,9 @@
     <q-page>
         <div class="row">
           <div class="col-lg-4 col-xs-grow text-center">
-            <img src="statics/text-encrypter.png" class="q-pa-md" style="max-width: 100%"/>
+            <img src="statics/TextEncrypter.jpg" class="q-pa-md"
+                 :style="$q.platform.is.mobile ?
+                 'max-width: 100%;' : 'max-width: 415px; max-height: 244px'"/>
             <q-card class="q-ma-md bg-dark">
               <q-card-section>
                 <div class="text-h4 custom-font text-white">About</div>
@@ -52,7 +54,10 @@
           <div class="col-lg-8 col-xs-grow" :class="$q.platform.is.mobile ? '': 'q-pa-md'">
               <q-card class="bg-dark">
                 <div class="row justify-center">
-                  <h2 class="text-center text-white">Choose operation</h2>
+                  <span class="text-center text-white q-pa-md"
+                        :class="$q.platform.is.mobile ? 'text-h4': 'text-h2'">
+                    Choose operation
+                  </span>
                   <div class="col-12">
                     <q-btn-toggle
                       v-model="option"

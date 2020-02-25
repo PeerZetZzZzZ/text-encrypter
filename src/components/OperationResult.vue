@@ -3,7 +3,8 @@
     <q-card-section>
       <div class="row justify-center">
         <div class="col-auto">
-          <div class="text-h3 q-pb-md text-primary" >
+          <div class="q-pb-md text-primary"
+               :class="$q.platform.is.mobile ? 'text-h4': 'text-h3'">
             Result
           </div>
         </div>
