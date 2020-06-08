@@ -1,4 +1,8 @@
 # Changelog:
+## [1.0.3] (8.06.2020)
+##### Modified:
+- application description (for better indexing)
+- update made
 ## [1.0.2] (24.02.2020)
 ##### Added:
 - ASCII encryption key validation
