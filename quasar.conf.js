@@ -114,9 +114,9 @@ module.exports = function (ctx) {
       workboxPluginMode: 'GenerateSW', // 'GenerateSW' or 'InjectManifest'
       workboxOptions: {}, // only for GenerateSW
       manifest: {
-        name: 'Text Encrypter',
-        short_name: 'Text Encrypter',
-        description: 'Univeral Text Data Encryption tool',
+        name: 'Text Encrypter - free and privacy secure online text encryption tool',
+        short_name: 'Text Encrypter - free and privacy secure online text encryption tool',
+        description: 'Universal text data encryption and decryption tool based on AES-256 CBC. Encrypt text or custom files. Privacy secure encryption in your browser only.',
         display: 'standalone',
         orientation: 'portrait',
         background_color: '#ffffff',
