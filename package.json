@@ -2,7 +2,7 @@
   "name": "text-encrypter",
   "version": "0.0.1",
   "description": "Universal text data encryption and decryption tool based on AES-256 CBC. Encrypt text or custom files. Privacy secure encryption in your browser only.",
-  "productName": "Text Encrypter - free and privacy secure online text encryption tool",
+  "productName": "Text Encrypter - free and privacy secure browser text encryption tool",
   "cordovaId": "org.cordova.quasar.app",
   "capacitorId": "",
   "author": "Przemysław Thomann przemyslaw.thomann@protonmail.com",
