@@ -1,4 +1,7 @@
 # Changelog:
+## [1.0.4] (8.06.2020)
+##### Modified:
+- application description (for better indexing)
 ## [1.0.3] (8.06.2020)
 ##### Modified:
 - application description (for better indexing)
