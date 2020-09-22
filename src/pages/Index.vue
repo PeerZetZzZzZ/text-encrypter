@@ -1,23 +1,29 @@
 <template>
-  <q-layout view="lHh Lpr lFf ">
+  <q-layout view="lHh Lpr lFf">
     <q-page>
         <div class="row">
           <div class="col-lg-4 col-xs-grow text-center">
-            <img src="statics/TextEncrypter.jpg" class="q-pa-md"
-                 :style="$q.platform.is.mobile ?
-                 'max-width: 100%;' : 'max-width: 415px; max-height: 244px'"/>
             <q-card class="q-ma-md bg-dark">
               <q-card-section>
-                <div class="text-h4 custom-font text-white">About</div>
+            <img src="statics/TextEncrypter.png"
+                 :style="$q.platform.is.mobile ?
+                 'max-width: 100%;' : 'max-width: 415px; max-height: 244px'"/>
+                <div class="text-h3 custom-font text-white">TEXT ENCRYPTER</div>
+                <div class="custom-font text-red"
+                :class="$q.platform.is.mobile ? 'text-subtitle' : 'text-h6'">
+                  FREE AND SECURE TEXT ENCRYPTER. <br>
+                  PRIVATE ENCRYPTION AND DECRYPTION IN YOUR BROWSER ONLY.
+                </div>
               </q-card-section>
-              <q-card-section class="text-left text-subtitle1 custom-font text-white">
-                 This tool allows to encrypt (and decrypt) any kind of text
-                 data for protected storage. <br>
-                 It can be used for sensitive data encryption for example passwords or seeds. <br>
-                 It uses AES CBC algorithm with 256 bits long key. <br>
+              <q-card-section style="padding-top: 0; margin-top: 0"
+                              class="text-left text-subtitle1 custom-font text-white">
+                 Text Encrypter allows to securely encrypt and decrypt any kind of text
+                 data for protected storage.
+                 It can be used for sensitive data encryption for example passwords or seeds.
+                 It uses secure AES CBC algorithm with 256 bits long key. <br>
                 <span class="text-bold text-white">
-                  Data encrypted with that tool can be later decrypted using any
-                  AES-256 CBC implementation software/script.
+                  Data encrypted with Text Encrypter can be later decrypted using any
+                  AES-256 CBC implementation software or script.
                 </span><br>
               </q-card-section>
               <q-card-section>
@@ -37,7 +43,7 @@
               <q-separator class="bg-white"/>
               <q-card-section>
                   <span class="text-bold text-red text-subtitle2 custom-font">
-                  This tool works only in your browser so you can use it offline. <br>
+                  Text Encrypter works only in your browser so you can use it offline. <br>
                   To be sure your data is safe open the page in private mode tab <br>
                   and turn off internet connection when encrypting/decrypting the data.
                 </span>

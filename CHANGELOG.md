@@ -1,4 +1,10 @@
 # Changelog:
+## [1.0.5] (8.06.2020)
+##### Modified:
+- default password sha checksum
+- changed logo
+- changed some description for better seo
+- added favicon
 ## [1.0.4] (8.06.2020)
 ##### Modified:
 - application description (for better indexing)
