@@ -1,4 +1,7 @@
 # Changelog:
+## [1.0.6] (21.10.2020)
+##### Modified:
+- fixed space missing in ASCII characters list
 ## [1.0.5] (8.06.2020)
 ##### Modified:
 - default password sha checksum
