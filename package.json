@@ -12,20 +12,20 @@
     "test": "echo \"No test specified\" && exit 0"
   },
   "dependencies": {
-    "@quasar/extras": "^1.8.2",
+    "@quasar/extras": "^1.10.6",
     "aes-js": "^3.1.2",
-    "file-saver": "^2.0.2",
+    "file-saver": "^2.0.5",
     "js-sha256": "^0.9.0",
-    "quasar": "^1.12.3",
-    "vue-i18n": "^8.18.1"
+    "quasar": "^1.15.19",
+    "vue-i18n": "^8.24.4"
   },
   "devDependencies": {
     "@quasar/app": "^1.9.6",
     "babel-eslint": "^10.1.0",
     "eslint": "^6.8.0",
-    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-loader": "^3.0.4",
-    "eslint-plugin-import": "^2.21.1",
+    "eslint-plugin-import": "^2.23.4",
     "eslint-plugin-vue": "^6.2.2"
   },
   "engines": {

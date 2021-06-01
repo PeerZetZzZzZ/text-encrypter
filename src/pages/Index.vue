@@ -54,6 +54,8 @@
                    class="text-bold custom-font text-white">
                   Find on GitHub <i class="fab fa-github"></i>
                 </a>
+                <br>
+                <span class="text-white custom-font">textencrypter.com 2021</span>
               </q-card-section>
             </q-card>
           </div>

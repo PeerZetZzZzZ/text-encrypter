@@ -7,9 +7,9 @@
           Text Encrypter
         </q-toolbar-title>
 
-        <div>v1.0.6
-          <a href="https://pthomann.pl" target="_blank" style="color: white"> </a>
-          | made by Przemysław Thomann <a href="https://pthomann.pl/en" target="_blank" style="color: white">pthomann.pl</a></div>
+        <div>v1.0.7
+          <a href="https://mobycrypt.com" target="_blank" style="color: white"> </a>
+          | made by Przemysław Thomann <a href="https://mobycrypt.com" target="_blank" style="color: white">mobycrypt.com</a></div>
       </q-toolbar>
     </q-header>
 

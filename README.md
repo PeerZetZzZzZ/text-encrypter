@@ -26,6 +26,7 @@ Tool works offline.
 
 ## Install the dependencies
 ```bash
+nvm use 14.15.5
 npm install
 ```
 

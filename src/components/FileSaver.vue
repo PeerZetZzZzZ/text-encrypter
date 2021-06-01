@@ -2,7 +2,8 @@
   <div>
     <saved-file-dialog :show="showPopup" :text-content="saveSuccessDialogMessage">
     </saved-file-dialog>
-    <q-btn color="primary" icon="save_alt" label="Save as file" @click="saveFile"/>
+    <q-btn color="primary" icon="save_alt" label="Save as file" @click="saveFile"
+           :disabled="fileContent === null || fileContent === 'No result yet.'"/>
   </div>
 </template>
 

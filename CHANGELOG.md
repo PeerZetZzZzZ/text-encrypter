@@ -1,4 +1,10 @@
 # Changelog:
+## [1.0.7] (1.06.2021)
+##### Modified:
+- changed pthomann.pl on mobycrypt.com
+- fixed q-input textarea max-height (UI bug)
+- npm upgrade (new quasar)
+- run on node 14.15.5 (new node_modules)
 ## [1.0.6] (21.10.2020)
 ##### Modified:
 - fixed space missing in ASCII characters list

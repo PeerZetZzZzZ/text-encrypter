@@ -11,21 +11,16 @@
       </div>
       <div :class="$q.platform.is.mobile ? '': 'q-ma-md'">
         <q-input
-          style="max-height:600px;"
           v-model="resultContent"
           filled
-          rows="50"
+          class="limited-textarea-bigger"
           type="textarea"
           readonly
         />
       </div>
       <div class="row justify-center text-center items-center q-mt-md">
         <div class="col-grow">
-          <file-saver :file-content="resultContent"
-                      :file-name="resultFileName"
-                      :disabled="resultContent === null ||
-                                 resultContent === 'No result yet.'">
-          </file-saver>
+          <file-saver :file-content="resultContent" :file-name="resultFileName"></file-saver>
         </div>
       </div>
     </q-card-section>

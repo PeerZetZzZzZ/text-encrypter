@@ -40,13 +40,12 @@
             <span class="text-subtitle2 text-primary text-bold">
            1. Text data to encrypt
           </span>
-          <q-input
-            style="max-height:300px;"
-            v-model="dataToEncrypt"
-            filled
-            rows="30"
-            type="textarea"
-          />
+            <q-input
+              class="limited-textarea-smaller"
+              v-model="dataToEncrypt"
+              filled
+              type="textarea"
+            />
         </div>
       </div>
       <div class="row items-center q-pt-md">
