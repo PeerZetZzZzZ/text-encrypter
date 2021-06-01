@@ -5,6 +5,7 @@
 - fixed q-input textarea max-height (UI bug)
 - npm upgrade (new quasar)
 - run on node 14.15.5 (new node_modules)
+- mobile UI improvements
 ## [1.0.6] (21.10.2020)
 ##### Modified:
 - fixed space missing in ASCII characters list

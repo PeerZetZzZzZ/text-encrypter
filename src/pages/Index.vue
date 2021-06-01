@@ -3,12 +3,14 @@
     <q-page>
         <div class="row">
           <div class="col-lg-4 col-xs-grow text-center">
-            <q-card class="q-ma-md bg-dark">
+            <q-card class="bg-dark"
+                    :class="$q.platform.is.mobile ? 'q-mt-xs q-mb-xs' : 'q-ma-md'">
               <q-card-section>
             <img src="statics/TextEncrypter.png"
                  :style="$q.platform.is.mobile ?
-                 'max-width: 100%;' : 'max-width: 415px; max-height: 244px'"/>
-                <div class="text-h3 custom-font text-white">TEXT ENCRYPTER</div>
+                 'max-width: 70%;' : 'max-width: 415px; max-height: 244px'"/>
+                <div class="custom-font text-white"
+                     :class="$q.platform.is.mobile ? 'text-h4' : 'text-h3'">TEXT ENCRYPTER</div>
                 <div class="custom-font text-red"
                 :class="$q.platform.is.mobile ? 'text-subtitle' : 'text-h6'">
                   FREE AND SECURE TEXT ENCRYPTER. <br>
