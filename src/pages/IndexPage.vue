@@ -1,6 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-page>
+    <q-page style="background-color: #F2F2F2">
       <div class="row">
         <div class="col-lg-4 col-xs-grow text-center">
           <q-card class="bg-dark"
@@ -102,7 +101,6 @@
         </div>
       </div>
     </q-page>
-  </q-layout>
 </template>
 
 <script>
