@@ -1,6 +1,6 @@
 # Text Encrypter (text-encrypter)
 
-Universal text data encryption/decryption tool using AES-256 (CBC) algorithm.
+Universal text data encryption/decryption tool using AES-256 (CBC) algorithm. Built with Quasar 2 and Vue 3 (2024).
 Live version: https://textencrypter.com
 
 ![TextEncrypter](preview.png)
