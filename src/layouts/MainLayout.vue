@@ -7,9 +7,9 @@
           Text Encrypter
         </q-toolbar-title>
 
-        <div>v1.0.7
+        <div>v2.0.0
           <a href="https://mobycrypt.com" target="_blank" style="color: white"> </a>
-          | made by Przemysław Thomann <a href="https://mobycrypt.com" target="_blank" style="color: white">mobycrypt.com</a></div>
+          | made by <a href="https://mobycrypt.com" target="_blank" style="color: white">mobycrypt.com</a></div>
       </q-toolbar>
     </q-header>
 
@@ -20,16 +20,25 @@
 </template>
 
 <script>
+import { defineComponent, ref } from 'vue'
+import EssentialLink from 'components/EssentialLink.vue'
 
-export default {
+export default defineComponent({
   name: 'MainLayout',
 
   components: {
+    EssentialLink
   },
 
-  data() {
+  setup () {
+    const leftDrawerOpen = ref(false)
+
     return {
-    };
-  },
-};
+      leftDrawerOpen,
+      toggleLeftDrawer () {
+        leftDrawerOpen.value = !leftDrawerOpen.value
+      }
+    }
+  }
+})
 </script>

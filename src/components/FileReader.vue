@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import SavedFileDialog from './SavedFileDialog';
+import SavedFileDialog from './SavedFileDialog.vue';
 
 export default {
   name: 'FileReader',

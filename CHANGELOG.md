@@ -1,4 +1,11 @@
 # Changelog:
+## [2.0.0] (21.09.2024)
+- migrated to Qusar 2 & Vue 3
+- upgrade to Node 22.8.0
+- SSR build
+- eslint removed (no eslint now)
+- small fixes for Quasar 2 & Vue 3
+- updated labels to year 2024
 ## [1.0.7] (1.06.2021)
 ##### Modified:
 - changed pthomann.pl on mobycrypt.com

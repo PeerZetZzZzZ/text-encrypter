@@ -8,8 +8,8 @@
 </template>
 
 <script>
-import { saveAs } from 'file-saver';
-import SavedFileDialog from './SavedFileDialog';
+  import { saveAs } from 'file-saver';
+import SavedFileDialog from './SavedFileDialog.vue';
 
 export default {
   name: 'FileSaver',

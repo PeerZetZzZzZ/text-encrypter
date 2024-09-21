@@ -80,8 +80,7 @@
           <span class="text-subtitle2 text-primary text-bold">
            3. Hash password
           </span><br>
-          <q-toggle v-model="useSha256" label="Use SHA-256 hashing password"
-                      @input="sha256Changed">
+          <q-toggle v-model="useSha256" label="Use SHA-256 hashing password">
             <q-tooltip content-style="font-size: 14px">
               Your password will be hashed using SHA-256 producing the 256 bits
               long checksum directly used as encryption key. <br>
@@ -149,9 +148,9 @@
 
 <script>
 import { encryptSymmetricCbc, generateRandomIvVectorHex } from '../api/encryption-service';
-import FileReader from './FileReader';
+import FileReader from './FileReader.vue';
 import { generateEncryptionResult } from '../api/result-generator-service';
-import SavedFileDialog from './SavedFileDialog';
+import SavedFileDialog from './SavedFileDialog.vue';
 import { isAscii } from '../api/ascii-service';
 
 export default {
@@ -174,18 +173,20 @@ export default {
       showPopup: false,
     };
   },
-  methods: {
-    fileUploaded(fileContent) {
-      this.dataToEncrypt = fileContent;
-    },
-    sha256Changed(value) {
-      if (value) {
+  watch: {
+    useSha256() {
+      if (this.useSha256) {
         this.passwordHint = 'encryption key will be SHA-256 checksum of your password';
         this.maxlength = 'No restrictions, no limit.';
       } else {
         this.passwordHint = 'encryption key must be 32 characters long';
         this.maxlength = 32;
       }
+    }
+  },
+  methods: {
+    fileUploaded(fileContent) {
+      this.dataToEncrypt = fileContent;
     },
     encrypt() {
       if (!isAscii(this.encryptionKey)) {

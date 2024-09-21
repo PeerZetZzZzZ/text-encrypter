@@ -1,4 +1,4 @@
-<template>
+  <template>
   <q-card :class="$q.platform.is.mobile ? '': 'q-ma-md'">
     <saved-file-dialog :error="true" :show="showPopup" :text-content="errorPopupMessage">
     </saved-file-dialog>
@@ -20,7 +20,6 @@
             v-model="option"
             spread
             no-caps
-            @input="optionChanged"
             color="white"
             text-color="black"
             :options="[
@@ -59,7 +58,6 @@
             v-model="encryptedDataText"
             filled
             class="limited-textarea-bigger"
-            @input="parseEncryptedData"
             type="textarea"
           />
         </div>
@@ -97,7 +95,7 @@
           <span class="text-subtitle2 text-primary text-bold">
             4. Encryption date (readonly)
           </span><br>
-          <q-input :value="encryptedDataJson.encryptionDate" readonly/>
+          <q-input :model-value="encryptedDataJson.encryptionDate" readonly/>
         </div>
       </div>
       <div class="row q-pt-md" v-if="encryptedDataJson.encryptedDataHex">
@@ -136,8 +134,8 @@
 
 <script>
 import { decryptSymmetricCbc } from '../api/encryption-service';
-import FileReader from './FileReader';
-import SavedFileDialog from './SavedFileDialog';
+import FileReader from './FileReader.vue';
+import SavedFileDialog from './SavedFileDialog.vue';
 
 export default {
   name: 'DecryptForm',
@@ -156,6 +154,15 @@ export default {
       encryptedDataText: '',
       errorPopupMessage: 'Encryption data seems to be incorrect. Assure it is correct JSON structured content.',
     };
+  },
+  watch: {
+    encryptedDataText() {
+      this.parseEncryptedData();
+    },
+    option() {
+      this.encryptedDataJson = {};
+      this.encryptedDataText = '';
+    }
   },
   methods: {
     fileUploaded(fileContent) {
@@ -187,10 +194,6 @@ export default {
       } catch (err) {
         console.log('Pasted encrypted data is not Text Encrypter JSON object');
       }
-    },
-    optionChanged() {
-      this.encryptedDataJson = {};
-      this.encryptedDataText = '';
     },
   },
 };

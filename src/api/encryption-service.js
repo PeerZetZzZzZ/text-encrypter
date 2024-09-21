@@ -1,11 +1,12 @@
 import { ASCII_CHARACTERS } from 'src/api/ascii-service';
+import aesjs from 'aes-js';
+import { sha256 } from 'js-sha256';
+import { Buffer } from 'buffer';
 
-const aesjs = require('aes-js');
-const jssha256 = require('js-sha256');
 
 export const encryptSymmetricCbc = (payloadUtf8, key, ivHex, useSha256) => {
   if (useSha256) {
-    key = jssha256.sha256.arrayBuffer(key);
+    key = sha256.arrayBuffer(key);
   }
   const payloadBytes = aesjs.utils.utf8.toBytes(payloadUtf8);
   const paddedPayloadBytex = aesjs.padding.pkcs7.pad(payloadBytes);
@@ -18,7 +19,7 @@ export const encryptSymmetricCbc = (payloadUtf8, key, ivHex, useSha256) => {
 
 export const decryptSymmetricCbc = (encryptedPayloadHex, key, ivVectorHex, useSha256) => {
   if (useSha256) {
-    key = jssha256.sha256.arrayBuffer(key);
+    key = sha256.arrayBuffer(key);
   }
   const encryptedBytes = aesjs.utils.hex.toBytes(encryptedPayloadHex);
   const ivBuffer = aesjs.utils.hex.toBytes(ivVectorHex);

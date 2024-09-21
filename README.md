@@ -17,32 +17,27 @@ Encryption specification:
 - PKCS7 encryption payload padding
 
 Dependencies:
+- Quasar framework 2, Vue 3
 - aes-js
 - js-sha256
-- Quasar framework
 - file-saver
 
 Tool works offline.
 
 ## Install the dependencies
 ```bash
-nvm use 14.15.5
+nvm use
 npm install
 ```
 
 ### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-quasar dev
-```
-
-### Lint the files
-```bash
-npm run lint
+npm run dev
 ```
 
 ### Build the app for production
 ```bash
-quasar build
+npm run build
 ```
 
 ### Customize the configuration

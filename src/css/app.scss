@@ -1,0 +1,19 @@
+// app global css in Sass form
+@font-face {
+  font-family: 'Inter';
+  src: url(src/assets/Montserrat-Regular.ttf) format('ttf');
+  font-display: swap;
+  font-size: 1rem !important;
+}
+.custom-font {
+  font-family: 'Montserrat', serif !important;
+}
+
+.limited-textarea-smaller textarea {
+  max-height: 230px;
+}
+
+.limited-textarea-bigger textarea {
+  height: 600px;
+  max-height: 600px;
+}
