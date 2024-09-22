@@ -8,7 +8,8 @@
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
     "dev": "node_modules/.bin/quasar dev",
-    "build": "node_modules/.bin/quasar build -m ssr"
+    "build": "node_modules/.bin/quasar build",
+    "build-ssr": "node_modules/.bin/quasar build -m ssr"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
