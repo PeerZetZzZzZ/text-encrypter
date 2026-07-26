@@ -56,7 +56,7 @@
                 Find on GitHub <i class="fab fa-github"></i>
               </a>
               <br>
-              <span class="text-white custom-font">textencrypter.com 2024</span>
+              <span class="text-white custom-font">textencrypter.com 2026</span>
             </q-card-section>
           </q-card>
         </div>
