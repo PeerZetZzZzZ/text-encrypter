@@ -1,6 +1,6 @@
 # Text Encrypter (text-encrypter)
 
-Universal text data encryption/decryption tool using AES-256 (CBC) algorithm. Built with [Quasar 2](https://quasar.dev/) and [Vue 3](https://vuejs.org/) (2024).
+Universal text data encryption/decryption tool using AES-256 (CBC) algorithm. Built with [Quasar 2](https://quasar.dev/) and [Vue 3](https://vuejs.org/) (2026).
 
 Live version: https://textencrypter.com
 
@@ -42,4 +42,4 @@ npm run build
 ```
 
 ### Customize the configuration
-See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+See [Configuring quasar.config.js](https://quasar.dev/quasar-cli/quasar-conf-js).
