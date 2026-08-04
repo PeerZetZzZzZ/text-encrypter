@@ -1,0 +1,23 @@
+{
+  "name": "Text Encrypter",
+  "short_name": "Text Encrypter",
+  "description": "Free AES-256 browser text encryption tool",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1d1d1d",
+  "background_color": "#1d1d1d",
+  "icons": [
+    {
+      "src": "/icons/web-app-manifest-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/icons/web-app-manifest-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}

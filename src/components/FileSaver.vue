@@ -8,7 +8,7 @@
 </template>
 
 <script>
-  import { saveAs } from 'file-saver';
+  import fileSaver from 'file-saver';
 import SavedFileDialog from './SavedFileDialog.vue';
 
 export default {
@@ -31,7 +31,7 @@ export default {
   methods: {
     saveFile() {
       const blob = new Blob([this.fileContent], { type: 'text/plain;charset=utf-8' });
-      saveAs(blob, this.fileName);
+      fileSaver.saveAs(blob, this.fileName);
       this.showPopup = !this.showPopup;
     },
   },

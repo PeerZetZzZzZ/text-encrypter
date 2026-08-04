@@ -1,13 +1,14 @@
 {
   "name": "textencrypter.com",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Universal text data encryption and decryption tool based on AES-256 CBC. Encrypt text or custom files. Privacy secure encryption in your browser only.",
   "productName": "Text Encrypter - free and privacy secure browser text encryption tool",
   "author": "mobycrypt",
   "private": true,
+  "type": "module",
   "scripts": {
     "test": "echo \"No test specified\" && exit 0",
-    "dev": "node_modules/.bin/quasar dev",
+    "dev": "node_modules/.bin/quasar dev -m ssr",
     "build": "node_modules/.bin/quasar build",
     "build-ssr": "node_modules/.bin/quasar build -m ssr"
   },
@@ -16,19 +17,21 @@
     "aes-js": "^3.1.2",
     "buffer": "^6.0.3",
     "file-saver": "^2.0.5",
-      "js-sha256": "^0.11.0",
-    "quasar": "^2.6.0",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0"
+    "js-sha256": "^0.11.0",
+    "quasar": "^2.21.3",
+    "vue": "^3.5.0",
+    "vue-router": "^5.0.6"
   },
   "devDependencies": {
-    "@quasar/app-vite": "^1.3.0",
+    "@quasar/app-vite": "^3.3.1",
     "autoprefixer": "^10.4.2",
     "postcss": "^8.4.14"
   },
   "engines": {
-    "node": "^18 || ^16 || ^14.19",
-    "npm": ">= 6.13.4",
-    "yarn": ">= 1.21.1"
+    "node": ">=24.18.0",
+    "npm": ">= 11.0.0"
+  },
+  "allowScripts": {
+    "@parcel/watcher@2.6.0": true
   }
 }

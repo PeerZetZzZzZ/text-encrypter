@@ -1,6 +1,6 @@
 <template>
-  <q-card :class="$q.platform.is.mobile ? '' : 'q-ma-md'">
-    <q-card-section>
+  <q-card class="full-height column col" :class="$q.platform.is.mobile ? '' : 'q-ma-md'">
+    <q-card-section class="col column">
       <div class="row justify-center">
         <div class="col-auto">
           <div class="q-pb-md text-primary" :class="$q.platform.is.mobile ? 'text-h4' : 'text-h3'">
@@ -8,14 +8,9 @@
           </div>
         </div>
       </div>
-      <div :class="$q.platform.is.mobile ? '' : 'q-ma-md'">
-        <q-input
-          v-model="localResultContent"
-          filled
-          class="limited-textarea-bigger"
-          type="textarea"
-          readonly
-        />
+      <div class="col" :class="$q.platform.is.mobile ? '' : 'q-ma-md'">
+        <q-input v-model="localResultContent" filled class="limited-textarea-bigger full-height" type="textarea"
+          readonly />
       </div>
       <div class="row justify-center text-center items-center q-mt-md">
         <div class="col-grow">

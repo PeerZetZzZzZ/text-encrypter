@@ -1,4 +1,4 @@
-import { ASCII_CHARACTERS } from 'src/api/ascii-service';
+import { ASCII_CHARACTERS } from '@/api/ascii-service';
 import aesjs from 'aes-js';
 import { sha256 } from 'js-sha256';
 import { Buffer } from 'buffer';

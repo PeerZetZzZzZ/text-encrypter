@@ -1,4 +1,11 @@
 # Changelog:
+## [2.1.0] (August 2026)
+- refreshed UI, dark theme, and layout improvements
+- new encryption and security information sections on the homepage
+- updated dependencies (Quasar, Vue, build tools) for security and stability
+- bug fixes for page loading, file download, and form display
+- encrypted files from previous versions remain compatible
+
 ## [2.0.0] (21.09.2024)
 - migrated to Qusar 2 & Vue 3
 - upgrade to Node 22.8.0

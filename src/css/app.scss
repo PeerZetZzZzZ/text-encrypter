@@ -9,6 +9,28 @@
   font-family: 'Montserrat', serif !important;
 }
 
+.q-card {
+  box-shadow: none;
+}
+
+.q-tooltip {
+  font-size: 1rem;
+}
+
+.operation-toggle {
+  border: 1px solid $grey-4;
+  border-radius: 4px;
+  overflow: hidden;
+
+  .q-btn {
+    border-left: 1px solid $grey-4;
+
+    &:first-child {
+      border-left: none;
+    }
+  }
+}
+
 .limited-textarea-smaller textarea {
   max-height: 230px;
 }
@@ -16,4 +38,297 @@
 .limited-textarea-bigger textarea {
   height: 600px;
   max-height: 600px;
+}
+
+.seo-section {
+  width: 100%;
+}
+
+.seo-section__card {
+  width: 100%;
+  max-width: none;
+}
+
+.seo-section__title {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.seo-section__subtitle {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin: 1.25rem 0 0.5rem;
+  color: #fff;
+}
+
+.seo-section__content p {
+  font-size: 1rem;
+  line-height: 1.65;
+  margin: 0 0 1rem;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.seo-section__content p:last-child {
+  margin-bottom: 0;
+}
+
+.seo-section__list {
+  margin: 0;
+  padding-left: 1.25rem;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+
+  li + li {
+    margin-top: 0.5rem;
+  }
+}
+
+.encryption-strength-banner {
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid $grey-4;
+}
+
+.encryption-strength-banner__title {
+  font-size: 1.15rem;
+}
+
+.encryption-strength-banner__stat {
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.encryption-strength-banner__number {
+  font-weight: 700;
+  font-size: 1.05rem;
+  font-family: 'Roboto Mono', monospace;
+  letter-spacing: 0.02em;
+  word-break: break-word;
+}
+
+$medium: 768px;
+
+@media only screen and (min-width: $medium) {
+  body {
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+  }
+
+  div.q-field__label.no-pointer-events,
+  .q-field__label {
+    font-size: 1rem;
+    padding-bottom: 6px;
+  }
+
+  .q-field__native,
+  .q-field__input,
+  .q-field__native textarea {
+    font-size: 0.9375rem !important;
+    letter-spacing: 0.2px;
+  }
+
+  .q-field__append,
+  .q-field__bottom {
+    font-size: 0.875rem;
+  }
+
+  .text-h2 {
+    font-size: 1.1rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .text-h3 {
+    font-size: 1.75rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .text-h4 {
+    font-size: 1.55rem;
+  }
+
+  .text-h6 {
+    font-size: 1.1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .sidebar-title {
+    font-size: 2.1rem;
+    line-height: 1.25;
+  }
+
+  .sidebar-tagline {
+    font-size: 1.3rem;
+    line-height: 1.45;
+  }
+
+  .text-subtitle1 {
+    font-size: 0.95rem;
+  }
+
+  .text-subtitle2 {
+    font-size: 0.9rem;
+  }
+
+  .seo-section__title {
+    font-size: 1.55rem;
+  }
+
+  .seo-section__subtitle {
+    font-size: 1.04rem;
+  }
+
+  .seo-section__content p,
+  .seo-section__list {
+    font-size: 0.9rem;
+  }
+
+  .encryption-strength-banner__title {
+    font-size: 1.04rem;
+  }
+
+  .encryption-strength-banner__stat {
+    font-size: 0.9rem;
+  }
+
+  // macOS: systemowy scaling/zoom często powiększa tekst — ~13% mniejszo
+  body.platform-mac {
+    font-size: 0.91rem;
+
+    div.q-field__label.no-pointer-events,
+    .q-field__label {
+      font-size: 0.9rem;
+    }
+
+    .text-h2 {
+      font-size: 1rem !important;
+    }
+
+    .text-h3 {
+      font-size: 1.52rem !important;
+    }
+
+    .text-h4 {
+      font-size: 1.65rem;
+    }
+
+    .text-h6 {
+      font-size: 1rem !important;
+    }
+
+    .sidebar-title {
+      font-size: 1.9rem;
+    }
+
+    .sidebar-tagline {
+      font-size: 1.15rem;
+    }
+
+    .text-subtitle1 {
+      font-size: 0.87rem;
+    }
+
+    .text-subtitle2 {
+      font-size: 0.82rem;
+      letter-spacing: 0.12px;
+    }
+
+    .q-tooltip {
+      font-size: 0.87rem;
+    }
+
+    .seo-section__title {
+      font-size: 1.35rem;
+    }
+
+    .seo-section__subtitle {
+      font-size: 0.95rem;
+    }
+
+    .seo-section__content p,
+    .seo-section__list {
+      font-size: 0.82rem;
+      letter-spacing: 0.12px;
+    }
+
+    .encryption-strength-banner__title {
+      font-size: 0.95rem;
+    }
+
+    .encryption-strength-banner__stat {
+      font-size: 0.82rem;
+    }
+  }
+
+  html, body {
+    overscroll-behavior-y: none;
+  }
+}
+
+@media only screen and (max-width: $medium) {
+  body {
+    font-size: 0.84rem;
+    letter-spacing: 0.35px;
+  }
+
+  .text-subtitle1 {
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .text-subtitle2 {
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .text-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.45;
+  }
+
+  .text-h4 {
+    font-size: 1.45rem;
+    line-height: 1.3;
+  }
+
+  .text-h3 {
+    font-size: 1.6rem;
+    line-height: 1.3;
+  }
+
+  .text-h2 {
+    font-size: 1.45rem;
+    line-height: 1.35;
+  }
+
+  .text-h6 {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  .seo-section__title {
+    font-size: 1.35rem;
+  }
+
+  .seo-section__subtitle {
+    font-size: 0.95rem;
+  }
+
+  .seo-section__content p,
+  .seo-section__list {
+    font-size: 0.84rem;
+    line-height: 1.6;
+  }
+
+  .encryption-strength-banner__title {
+    font-size: 0.95rem;
+  }
+
+  .encryption-strength-banner__stat {
+    font-size: 0.82rem;
+  }
+
+  .encryption-strength-banner__number {
+    font-size: 0.9rem;
+  }
 }
